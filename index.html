@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Question</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .container {
+        background: white;
+        padding: 40px 25px;
+        border-radius: 25px;
+        width: 320px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+        color: #e75480;
+    }
+
+    p {
+        color: #555;
+        font-size: 17px;
+    }
+
+    button {
+        border: none;
+        padding: 13px 25px;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    #yes {
+        background: #ff4f81;
+        color: white;
+    }
+
+    #no {
+        background: #ddd;
+        color: #333;
+    }
+
+    #message {
+        color: #e75480;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hey You! ❤️</h1>
+
+    <p>I have a little question for you...</p>
+
+    <h2>Will you go on a date with me? 🥹</h2>
+
+    <button id="yes" onclick="sayYes()">YES ❤️</button>
+
+    <button id="no" onmouseover="moveNo()">NO 😭</button>
+
+    <div id="message"></div>
+</div>
+
+<script>
+    function sayYes() {
+       window.location.href = "yes.html";
+    }
+
+    function moveNo() {
+        const button = document.getElementById("no");
+
+        button.style.position = "fixed";
+
+        const maxX = window.innerWidth - button.offsetWidth;
+        const maxY = window.innerHeight - button.offsetHeight;
+
+        button.style.left = Math.random() * maxX + "px";
+        button.style.top = Math.random() * maxY + "px";
+    }
+</script>
+
+</body>
+</html>
